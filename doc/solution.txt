@@ -1,0 +1,78 @@
+--------------------------- Solution 4 ---------------------------------
+4. <<Pseudo Code>>
+Déclarations
+    Variable x en Chaine.
+    Variable y  en Chaine.
+    Variable cardX, cardX, i, j en Entier 
+    Variable arrX, arrY tableau de Caractères
+    Variable bool en Boolean
+Debut
+    //Saisir les données.
+    Ecrire("Veuillez saisir le premier le chaine : ");
+    Lire(x)
+    Ecrire("Veuillez saisir le second le chaine : ");
+    Lire(y);
+    i          <- 0;
+    cardX      <- x.length;
+    cardY      <- x.length;
+    arrX       <- split(trim(x), ""); // Transform en tableau
+    arrY       <- split(trim(y), ""); // Transform en tableau
+
+    bool       <- false
+    Tant  que cardX === cardY && cardX > i   Faire
+        Pour j Allant de 0 à cardX Faire 
+            Si (arrX[i] == arrY[j]) Alors
+                bool = true;
+            FinSi
+        FinPour
+        i++; // Incrémenter
+    FinTantQue
+Fin 
+--------------------------- Solution 4 ---------------------------------
+5 <<Pseudo Code>>
+Déclarations
+    Variable nombreX, nombreY en Entier 
+    Variable sommeX, sommeY en Entier
+    Variable x, y en Chaine
+    Variable arrX, arrY un Tableau en Entier
+    Variable cardX, cardY un Tableau en Entier
+    Variable i, j, resultat en Entier
+    Variable bool en Boolean
+
+Debut
+    //Saisir les données.
+    Ecrire("Veuillez saisir le premier  nombreX : ");
+    Lire(nombreX)
+    Ecrire("Veuillez saisir le second  nombreY : ");
+    Lire(nombreY)
+
+    bool   <- true
+    sommeX <- nombreX;
+    sommeY <- nombreY;
+
+    Tant sommeX <> sommeY && bool Faire 
+        x <- (string) sommeX; // convertir nombre string
+        y <- (string) sommeY; // convertir nombre string
+
+        arrX <- split(trim(x), ""); // Transform string en Tableau
+        arrY <- split(trim(y), ""); // Transform string en Tableau 
+
+        cardX <- arrX.length; // Taille du Tableau arrX
+        cardY <- arrY.length; //  Taille du Tableau arrY
+
+        Pour i Allant de 0 à cardX Faire
+            sommeX = sommeX + arrX[i];
+        FinPour
+
+        Pour j Allant de 0 à cardY Faire
+            sommeY = sommeY + arrY[j];
+        FinPour 
+
+        Si sommeX == sommeY Alors 
+            bool = false;
+            resultat = sommeX ;
+        FinSi
+    FinTantQue
+
+    retourner resultat;
+Fin

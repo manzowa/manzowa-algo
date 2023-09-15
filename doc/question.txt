@@ -1,0 +1,30 @@
+-----------------------------Algo 1------------------------------------
+1- Écrivez le corps  de la fonction sommeInterval($ts, $x, $y)
+	$ts est tableau d'entier. Les parametres $x et $y sont des entiers definis par la rélation 0 <= $x <= $y <= count($ts).
+	La fonction doit retourner la somme des entiers de $ts dont l'index appartient à l'intervalle [$x, $y].
+	exemple: 
+		- sommeInterval([1, 6, 4, 8, 2], 0, 2); //11
+
+-----------------------------Algo 2------------------------------------
+2- Implémentez la fonction SmalestInterval($numbers) le plus petit intervalle positif entre deux éléments du tableau $numbers.
+	Exemple: [1, 6, 4, 8, 2], le plus petit intervalle est 1 (difference entre 2 et 1)
+		- smallestInterval([1, 6, 4, 8, 2]); // 1
+
+-----------------------------Algo 3------------------------------------
+3. Écrire l'agorithme qui permet la valeur approche de zero.
+
+-----------------------------Algo 4------------------------------------
+4. Écrire l'agorithme qui permet d'ecrire le jumeau(twin) d'un est un mot écrit avec exactement mêmes lettres (indépendamment de la casse), mais pas nécessairement dans le même ordre. 
+	Exemple: Marion est le jumeau de Romain. 
+		La fonction is_win($a, $b) retourne true si  b est le jumeau de ou false si cce n'estpas le cas a et b sont deux chaîne de caractères non null.
+
+-----------------------------Algo 5------------------------------------
+5. On considére la suite de nombres dans laquelle un nombre est suivi du même nombre plus la somme de ces chiffres. 
+	Exemple: 34 est suivi de 41 (41 = 34 + (3+4)) est lui-même suivi 46 (46= 41 + (4 + 1 )). 
+A quelle moment le deux séquences avec des poins départ diffèrents peuvent finir par se rejoindre.
+	Par exemple: 
+	--471 --> (471+4+7+1) --> 483 --> (483+4+8+3) --> 498 --> (498+4+9+8) --> 519--> (519+1+9)-->534
+	|																		   ^
+	|																		   |
+	|																		   v
+	--480 --> (480+4+8+0) --> 492 --> (492+4+9+2) --> 507 --> (507+5+0+7) --> 519
