@@ -193,12 +193,13 @@ function filterWords(array $words, string $letters): array {
     $card = count($words);
     $index = 0;
     while ($card >= $index) {
-        $word = trim($words[$index]);
-        $wordSplits = mb_str_split($word);
-        $lettersSplit = mb_str_split($letters);
-        for ($i=0; $i < count($lettersSplit); $i++) { 
-            for ($j=0; $j < count($wordSplits); $j++) { 
-                if ($lettersSplit[$i] == $wordSplits[$j] && $lettersSplit[$i] != "" ) {
+        $word = trim($words[$index]).PHP_EOL;
+        $wordLength= mb_strlen($word);
+        $letterLength = mb_strlen($letters);
+        
+        for ($i=0; $i < $letterLength; $i++) { 
+            for ($j=0; $j < $wordLength ; $j++) { 
+                if ($letters[$i] == $word[$j] && $letters[$i] != "" ) {
                     $resultat[] = $word;
                     break;
                 }
