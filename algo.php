@@ -136,4 +136,25 @@ function computeJoinPoint(int $nombreX, int $nombreY)
     }
     return $resultat;
 }
-echo computeJoinPoint(471, 480) . "\n";
+// echo computeJoinPoint(471, 480) . "\n";
+function election($annee, $pEcart=5, $pAnneeStart=2007) {
+    $ecart = $pEcart;
+    $anneeStart = $pAnneeStart;
+    $isbool = false;
+    if ($annee >= $anneeStart) {
+        $rest = $annee - $anneeStart;
+        $nRest = ($rest == 0) ? $ecart : $rest;
+        $counter = 1;
+        $nEcart = $ecart;
+        while ($nRest >= $nEcart) {
+            if (($nEcart == $nRest) && ($nEcart/ $ecart >= 1)) {
+            	 $isbool = true;
+                 $counter = 1;
+            }
+            $counter++;
+            $nEcart = $ecart * $counter;
+        }
+    }
+   return $isbool;
+}
+var_dump(election(2016));  
