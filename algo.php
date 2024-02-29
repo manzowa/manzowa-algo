@@ -187,5 +187,30 @@ function calc (array $array , int $n1, int $n2): int {
     }
     return $somme;
 }
-$arr = [0,1,2,3,4,5,6,7];
-var_dump(calc($arr, 2, 4));
+
+function filterWords(array $words, string $letters): array {
+    $resultat = [];
+    $card = count($words);
+    $index = 0;
+    while ($card >= $index) {
+        $word = trim($words[$index]);
+        $wordSplits = mb_str_split($word);
+        $lettersSplit = mb_str_split($letters);
+        for ($i=0; $i < count($lettersSplit); $i++) { 
+            for ($j=0; $j < count($wordSplits); $j++) { 
+                if ($lettersSplit[$i] == $wordSplits[$j] && $lettersSplit[$i] != "" ) {
+                    $resultat[] = $word;
+                    break;
+                }
+            }
+        }
+        $index++;
+    }
+
+    return $resultat;
+
+}
+
+$words = ['the', 'dog', 'got', 'a','bone'];
+$letters = 'ae';
+var_dump(filterWords($words, $letters));
