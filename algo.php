@@ -137,6 +137,16 @@ function computeJoinPoint(int $nombreX, int $nombreY)
     return $resultat;
 }
 // echo computeJoinPoint(471, 480) . "\n";
+/**
+ * Function election
+ * 
+ * Il permet de détermine l'année de l'éléction
+ *
+ * @param [type] $annee
+ * @param integer $pEcart
+ * @param integer $pAnneeStart
+ * @return bool 
+ */
 function election($annee, $pEcart=5, $pAnneeStart=2007) {
     $ecart = $pEcart;
     $anneeStart = $pAnneeStart;
@@ -157,4 +167,25 @@ function election($annee, $pEcart=5, $pAnneeStart=2007) {
     }
    return $isbool;
 }
-var_dump(election(2016));  
+
+/**
+ * Function calc 
+ * 
+ * Il permet de retourne la somme de l'internal d'un tableau.
+ *
+ * @param array $array
+ * @param integer $n1
+ * @param integer $n2
+ * @return integer
+ */
+function calc (array $array , int $n1, int $n2): int {
+    $somme = 0;
+    $index = $n1;
+    while ($index <= $n2) {
+        $somme = $somme + $array[$index];
+        $index++;
+    }
+    return $somme;
+}
+$arr = [0,1,2,3,4,5,6,7];
+var_dump(calc($arr, 2, 4));
