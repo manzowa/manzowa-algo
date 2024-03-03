@@ -211,7 +211,3 @@ function filterWords(array $words, string $letters): array {
     return $resultat;
 
 }
-
-$words = ['the', 'dog', 'got', 'a','bone'];
-$letters = 'ae';
-var_dump(filterWords($words, $letters));

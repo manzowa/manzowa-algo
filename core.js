@@ -159,3 +159,4 @@ function computeJoinPoint(nombreX, nombreY)
     return resultat;
 }
 console.log({ resultat: computeJoinPoint(471, 480) });
+
