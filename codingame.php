@@ -77,7 +77,8 @@ function valeurApprocheZero(array $ts): int
 
 /**
  * Method is_win
- * Il permet d'ecrire le jumeau(twin) d'un est un mot écrit avec exactement mêmes 
+ * 
+ * IL permet d'affirmer le deux mot en parametre ont le même
  * lettres (indépendamment de la casse)
  * 
  * @param string $x - 
@@ -101,7 +102,7 @@ function is_win(string $x, string $y)
 
 /**
  * Method computeJoinPoint
- * Il permet de retourne le moment ou la somme de ces chiffre se rejoins.
+ * Il permet de retourne le moment ou la somme de ces chiffre se rejoint.
  * 
  * @param int $nombreX - 
  * @param int $nombreY -
@@ -210,4 +211,14 @@ function filterWords(array $words, string $letters): array {
 
     return $resultat;
 
+}
+/**
+ * Function Magic
+ *
+ * @param array $stones
+ * @return integer
+ */
+function magic(array $stones): int 
+{
+    return 0;
 }
