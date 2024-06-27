@@ -1,3 +1,30 @@
+--------------------------- Solution 3 ---------------------------------
+3. <<Pseduo Code >> valeurApprocheZero
+Déclarations
+    Variables Tableau en Entier // Tableau de Variable en entier 
+    Variable cardinal en Entier // Taile du tableau 
+    Variable min Entier  // valeur minimal .
+    Variable result en Entier
+
+    Debut 
+        min <- 0
+        Pour i Allant de 1 à cardinal Faire 
+            j = i ;
+            Tant que (|Tableau[j]| <= |Tableau[min]|) et j> 1 Faire 
+                // ICI ce sont le meme valeur ou valeur min > j
+                Si (|Tableau[j]| == |Tableau[min]|) et Tableau[min] > Tableau[j] Alors
+                    min <- min
+                sinon
+                    min <- j
+                FinSi
+                j--
+            FinTantQue
+        FinPour
+
+        result = Tableau[min];
+        retourner result
+
+#FINDECLARATION
 --------------------------- Solution 4 ---------------------------------
 4. <<Pseudo Code>>
 Déclarations
@@ -6,28 +33,29 @@ Déclarations
     Variable cardX, cardX, i, j en Entier 
     Variable arrX, arrY tableau de Caractères
     Variable bool en Boolean
-Debut
-    //Saisir les données.
-    Ecrire("Veuillez saisir le premier le chaine : ");
-    Lire(x)
-    Ecrire("Veuillez saisir le second le chaine : ");
-    Lire(y);
-    i          <- 0;
-    cardX      <- x.length;
-    cardY      <- x.length;
-    arrX       <- split(trim(x), ""); // Transform en tableau
-    arrY       <- split(trim(y), ""); // Transform en tableau
+    Debut
+        //Saisir les données.
+        Ecrire("Veuillez saisir le premier le chaine : ");
+        Lire(x)
+        Ecrire("Veuillez saisir le second le chaine : ");
+        Lire(y);
+        i          <- 0;
+        cardX      <- x.length;
+        cardY      <- x.length;
+        arrX       <- split(trim(x), ""); // Transform en tableau
+        arrY       <- split(trim(y), ""); // Transform en tableau
 
-    bool       <- false
-    Tant  que cardX === cardY && cardX > i   Faire
-        Pour j Allant de 0 à cardX Faire 
-            Si (arrX[i] == arrY[j]) Alors
-                bool = true;
-            FinSi
-        FinPour
-        i++; // Incrémenter
-    FinTantQue
-Fin 
+        bool       <- false
+        Tant  que cardX === cardY && cardX > i   Faire
+            Pour j Allant de 1 à cardX Faire 
+                Si (arrX[i] == arrY[j]) Alors
+                    bool = true;
+                FinSi
+            FinPour
+            i++; // Incrémenter
+        FinTantQue
+    Fin 
+#FINDECLARATION
 --------------------------- Solution 4 ---------------------------------
 5 <<Pseudo Code>>
 Déclarations
@@ -39,40 +67,42 @@ Déclarations
     Variable i, j, resultat en Entier
     Variable bool en Boolean
 
-Debut
-    //Saisir les données.
-    Ecrire("Veuillez saisir le premier  nombreX : ");
-    Lire(nombreX)
-    Ecrire("Veuillez saisir le second  nombreY : ");
-    Lire(nombreY)
+    Debut
+        //Saisir les données.
+        Ecrire("Veuillez saisir le premier  nombreX : ");
+        Lire(nombreX)
+        Ecrire("Veuillez saisir le second  nombreY : ");
+        Lire(nombreY)
 
-    bool   <- true
-    sommeX <- nombreX;
-    sommeY <- nombreY;
+        bool   <- true
+        sommeX <- nombreX;
+        sommeY <- nombreY;
 
-    Tant sommeX <> sommeY && bool Faire 
-        x <- (string) sommeX; // convertir nombre string
-        y <- (string) sommeY; // convertir nombre string
+        Tant sommeX <> sommeY && bool Faire 
+            x <- (string) sommeX; // convertir nombre string
+            y <- (string) sommeY; // convertir nombre string
 
-        arrX <- split(trim(x), ""); // Transform string en Tableau
-        arrY <- split(trim(y), ""); // Transform string en Tableau 
+            arrX <- split(trim(x), ""); // Transform string en Tableau
+            arrY <- split(trim(y), ""); // Transform string en Tableau 
 
-        cardX <- arrX.length; // Taille du Tableau arrX
-        cardY <- arrY.length; //  Taille du Tableau arrY
+            cardX <- arrX.length; // Taille du Tableau arrX
+            cardY <- arrY.length; //  Taille du Tableau arrY
 
-        Pour i Allant de 0 à cardX Faire
-            sommeX = sommeX + arrX[i];
-        FinPour
+            Pour i Allant de 0 à cardX Faire
+                sommeX = sommeX + arrX[i];
+            FinPour
 
-        Pour j Allant de 0 à cardY Faire
-            sommeY = sommeY + arrY[j];
-        FinPour 
+            Pour j Allant de 0 à cardY Faire
+                sommeY = sommeY + arrY[j];
+            FinPour 
 
-        Si sommeX == sommeY Alors 
-            bool = false;
-            resultat = sommeX ;
-        FinSi
-    FinTantQue
+            Si sommeX == sommeY Alors 
+                bool = false;
+                resultat = sommeX ;
+            FinSi
+        FinTantQue
 
-    retourner resultat;
-Fin
+        retourner resultat;
+    Fin
+
+#FINDECLARATION

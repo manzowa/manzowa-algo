@@ -56,23 +56,13 @@ function valeurApprocheZero(array $ts): int
 {
     $card = sizeof($ts);
     $min = 0;
-
     for ($i = 0; $i < $card; $i++) {
-        $j = $i;
-        while ((abs($ts[$j]) <= abs($ts[$min])) && $j > 0) {
-            if ((abs($ts[$j]) == abs($ts[$min])) && ($ts[$min] > $ts[$j])) {
-                $min = $min;
-            } else {
-                $min = $j;
-            }
-            $j--;
-        }
+        $t = $ts[$i];
+        if((abs(intval($ts[$min])) == abs($t) && intval($ts[$min]) < $t)  or (abs(intval($ts[$min])) > abs($t))) 
+        $min = $i;
     }
-    $res = (int) $ts[$min];
-    if ($card == 0) {
-        $res = 0;
-    }
-    return $res;
+    $result = ( $card > 0 ) ? $ts[$min] : 0;
+    return $result;
 }
 
 /**
