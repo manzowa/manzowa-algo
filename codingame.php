@@ -99,33 +99,19 @@ function is_win(string $x, string $y)
  * 
  * @return int
  */
-function computeJoinPoint(int $nombreX, int $nombreY)
-{
-    $bool = true;
-    $sommeX = $nombreX;
-    $sommeY = $nombreY;
-    $resultat = null;
+function computeJoinPoint(int $nombreX, int $nombreY) {
+    $sommex = $nombreX;
+    $sommey = $nombreY;
+    $jointure = null;
+    $level = 0; // Nombre des opération réalise 
 
-    while ($sommeX !== $sommeY && $bool) {
-        $x = (string) $sommeX;
-        $y = (string) $sommeY;
-        $arrX = str_split(trim($x));
-        $arrY = str_split(trim($y));
-        $cardX = count($arrX);
-        $cardY = count($arrY);
-
-        for ($i = 0; $i < $cardX; $i++) {
-            $sommeX = $sommeX + $arrX[$i];
-        }
-        for ($j = 0; $j < $cardY; $j++) {
-            $sommeY = $sommeY + $arrY[$j];
-        }
-        if ($sommeX === $sommeY) {
-            $bool = false;
-            $resultat = $sommeX;
-        }
+    while($sommex !== $sommey && $level < 1000) {
+        $sommex = $sommex + array_sum(str_split(strval($sommex))); 
+        $sommey = $sommey + array_sum(str_split(strval($sommey)));
+        ($sommey === $sommex)? $jointure = $sommex : false;
+        $level++;
     }
-    return $resultat;
+    return $jointure;
 }
 // echo computeJoinPoint(471, 480) . "\n";
 /**
@@ -210,5 +196,28 @@ function filterWords(array $words, string $letters): array {
  */
 function magic(array $stones): int 
 {
-    return 0;
+    $fusion = true;
+    $level = 0;
+    while ($fusion) {
+        $fusion = false;
+        $i = 0;
+        $j = $i+1;
+        $stones_tmp = [];
+        while ($j < count($stones)) {
+          if (($stones[$i] == $stones[$j])) {
+            $fusion = true;
+            $stones_tmp[] = $stones[$i] + 1;
+            // Suppresion de valeur compare
+            unset($stones[$i]);
+            unset($stones[$j]);
+            $stones= array_values($stones); // Reset index stones
+          } else {
+            $j++;
+          }
+        }
+        $stones = [...$stones, ...$stones_tmp];
+        $stones_tmp = [];
+        $level ++;
+    }
+    return count($stones); 
 }
